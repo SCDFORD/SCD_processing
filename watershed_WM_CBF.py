@@ -87,7 +87,6 @@ if __name__=="__main__":
 
         threshold_image(names.cbf_GM_normalized.in_native_space, names.cbf_0_to_25_mask.in_native_space, lower_thr = 0.01, upper_thr = 0.25, binarize=True)
         perform_linear_registration(names.cbf_GM_normalized, names.recalculated_oef, cost="corratio", dof=6, search=True)
-        apply_linear_registration(names.cbf_GM_normalized, names.recalculated_oef, interp='nearestneighbour')
         apply_linear_registration(names.cbf_0_to_25_mask, names.recalculated_oef, interp='nearestneighbour')
         threshold_image(names.cbf_GM_normalized.in_native_space, names.cbf_25_to_35_mask.in_native_space, lower_thr = 0.25, upper_thr = 0.35, binarize=True)
         apply_linear_registration(names.cbf_25_to_35_mask, names.recalculated_oef, interp='nearestneighbour')
